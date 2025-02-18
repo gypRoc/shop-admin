@@ -6,16 +6,37 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src/**/*.{js,jsx,vue,ts,tsx} --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.26.8",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-promise": "^6.6.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "lint-staged": "^11.0.1",
     "typescript": "~5.7.2",
     "vite": "^6.1.0",
     "vue-tsc": "^2.2.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "npm run lint",
+      "git add"
+
+    ]
   }
 }
