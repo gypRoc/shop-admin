@@ -20,5 +20,15 @@ module.exports = {
     'vue',
     '@typescript-eslint'
   ],
-  rules: {}
+  rules: {
+    'vue/multi-word-component-names': 'off'
+  },
+  overrides: [
+    {
+      files: ['src/api/**/*.ts'],
+      rules: {
+        camelcase: 'off'
+      }
+    }
+  ]
 }
